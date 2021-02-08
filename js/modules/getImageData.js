@@ -1,9 +1,10 @@
 export async function getImageData(endpoint, query) {
   const apiURL = 'https://api.unsplash.com/'
   const apiKey = 'lbhvcWW7O-NY5XERiGF9BrvC2L05e-MWIjagBBsXr9A'
+  const fetchURL = `${apiURL}${endpoint}?client_id=${apiKey}${query ? `&query=${query}` : ''}`
 
     try {
-      const response = await fetch(`${apiURL}${endpoint}?client_id=${apiKey}${query ? `&query=${query}` : ''}`)
+      const response = await fetch(fetchURL)
       const data = await response.json()
       return console.log(data)
     } catch (err) {
