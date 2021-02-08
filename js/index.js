@@ -1,28 +1,13 @@
-import renderFeed from './modules/renderFeed'
+import Feed from './components/organisms/Feed.js'
 
-// function searchImages() {
-//   const searchForm = document.querySelector('form')
-//   searchForm.addEventListener('submit', e => {
-//     e.preventDefault()
-//     if (search.value) getImageData('search/photos/', search.value)
-//   })
-// }
-
-(function () {
-  const route = {
-    root: '/',
-    popular: '#popular',
-    latest: '#latest',
-    search: '#search'
-  }
-  switch (route) {
-    case root:
-      renderFeed('photos/')
-      break;
-    case popular:
-      renderFeed('photos')
+(async function () {
+  const feedContainer = document.querySelector('.feed')
+  let feedData = await Feed()
+  feedContainer.innerHTML = feedData
   
-    default:
-      break;
-  }
+  const latestTab = document.querySelector('nav li:nth-child(2)')
+  latestTab.addEventListener('click', async() => {
+    feedData = await Feed('&order_by=popular')
+    feedContainer.innerHTML = feedData
+  })
 })()

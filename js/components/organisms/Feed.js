@@ -2,17 +2,16 @@ import {getImageData} from '../../modules/getImageData.js'
 
 import Image from '../molecules/Image.js'
 
-async function Feed(target) {
-  const images = await getImageData(target)
+async function Feed(endpoint, param) {
+  const images = await getImageData(endpoint, param)
 
   return `
-    <section class="feed">
-      ${images.map(image => {
-        return (
-          Image(image.urls.regular, image.alt_description, image.user.username)
-        )
-      }).join('')}
-    </section>`
+    ${images.map(image => {
+      return (
+        Image(image.urls.regular, image.alt_description, image.user.username)
+      )
+    }).join('')}
+  `
 }
 
 export default Feed
