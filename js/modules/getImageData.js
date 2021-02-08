@@ -6,7 +6,7 @@ export async function getImageData(endpoint, query) {
     try {
       const response = await fetch(fetchURL)
       const data = await response.json()
-      return console.log(data)
+      return data
     } catch (err) {
       return console.log('Something went wrong', err)
     }

@@ -1,13 +1,12 @@
-import ImagePhoto from "../atoms/ImagePhoto"
-import ImageDescription from "../atoms/ImageDescription"
+import ImagePhoto from '../atoms/ImagePhoto.js'
+import ImageDescription from '../atoms/ImageDescription.js'
 
-function Image() {
-  return (`
+function Image(src, alt, desc) {
+  return `
     <figure class="feed--image">
-      ${ImagePhoto}
-      ${ImageDescription}
-    </figure>
-  `)
+      ${ImagePhoto(src, alt)}
+      ${ImageDescription(desc)}
+    </figure>`
 }
 
 export default Image
