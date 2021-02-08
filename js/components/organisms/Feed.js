@@ -2,8 +2,8 @@ import {getImageData} from '../../modules/getImageData.js'
 
 import Image from '../molecules/Image.js'
 
-async function Feed() {
-  const images = await getImageData('photos/')
+async function Feed(target) {
+  const images = await getImageData(target)
 
   return `
     <section class="feed">
