@@ -1,7 +1,7 @@
 function NavLink(name) {
   return `
     <li class="main-nav--link">
-      <a href="#${name}">${name}</a>
+      ${name}
     </li>`
 }
 

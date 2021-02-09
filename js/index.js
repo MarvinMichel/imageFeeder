@@ -1,13 +1,24 @@
-import Feed from './components/organisms/Feed.js'
+import createRouter from './router/router.js'
+import handleRouteChange from './router/handleRouteChange.js'
 
-(async function () {
-  const feedContainer = document.querySelector('.feed')
-  let feedData = await Feed()
-  feedContainer.innerHTML = feedData
-  
-  const latestTab = document.querySelector('nav li:nth-child(2)')
-  latestTab.addEventListener('click', async() => {
-    feedData = await Feed('&order_by=popular')
-    feedContainer.innerHTML = feedData
+import NavLink from './components/atoms/NavLink.js'
+
+(function () {
+  const router = createRouter()
+  handleRouteChange(router)
+
+  console.log(NavLink)
+
+  const navLinks = document.querySelectorAll('nav li')
+  navLinks.forEach(navLink => {
+    navLink.addEventListener('click', e => {
+      navLinks.forEach(navLink => navLink.classList.remove('active'))
+
+      const target = e.target
+      target.classList.add('active')
+
+      const url = target.innerText.toLowerCase()
+      handleRouteChange(router, `/${url}`)
+    })
   })
 })()

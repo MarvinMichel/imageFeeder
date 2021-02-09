@@ -28,7 +28,7 @@ h3,
 h4,
 h5,
 h6 {
-  font-weight: 800;
+  font-weight: 700;
   margin: 0 auto;
   width: max-content;
 }
@@ -52,7 +52,7 @@ main form {
   display: flex;
   justify-content: center;
   margin: 2.5em auto 2em;
-  width: clamp(18rem, 80vw, 40rem);
+  width: clamp(18rem, 80vw, 35rem);
 }
 
 main form input,
@@ -95,17 +95,16 @@ nav {
   align-items: center;
   border-top: 1px solid var(--color-accent);
   display: flex;
-  justify-content: center;
+  /* justify-content: center; */
   margin: 0 auto;
+  overflow: scroll;
   width: 80vw;
 }
 
 nav ul {
   display: flex;
-  justify-content: space-evenly;
   list-style: none;
   padding: 0;
-  width: 12em;
 }
 
 nav ul li {
@@ -115,8 +114,11 @@ nav ul li {
     3px 3px 5px #1f1f1f16,
     -3px -3px 5px #ffffff16;
   color: var(--color-secondary);
+  cursor: pointer;
   font-size: .8em;
+  margin-right: 2%;
   padding: .5em 1em;
+  white-space: nowrap;
 }
 
 nav ul li.active {
