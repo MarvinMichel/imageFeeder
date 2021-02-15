@@ -1,24 +1,8 @@
-import createRouter from './router/router.js'
-import handleRouteChange from './router/handleRouteChange.js'
+import { handleRouteChange } from './router/router.js'
 
-import NavLink from './components/atoms/NavLink.js'
+import Navigation from './components/organisms/Navigation.js'
 
-(function () {
-  const router = createRouter()
-  handleRouteChange(router)
+const main = document.querySelector('main')
+main.insertAdjacentElement('beforeend', Navigation())
 
-  console.log(NavLink)
-
-  const navLinks = document.querySelectorAll('nav li')
-  navLinks.forEach(navLink => {
-    navLink.addEventListener('click', e => {
-      navLinks.forEach(navLink => navLink.classList.remove('active'))
-
-      const target = e.target
-      target.classList.add('active')
-
-      const url = target.innerText.toLowerCase()
-      handleRouteChange(router, `/${url}`)
-    })
-  })
-})()
+handleRouteChange()
