@@ -1,5 +1,3 @@
-import removeChildren from '../modules/removeChildren.js'
-
 import Feed from '../components/organisms/Feed.js'
 
 const routes = [
@@ -14,6 +12,10 @@ const routes = [
   {
     path: '/popular',
     action: () => Feed('&order_by=popular')
+  },
+  {
+    path: '/:topic',
+    action: (context) => Feed(undefined, `topics/${context.params.topic}/photos`)
   },
   {
     path: '/search',
