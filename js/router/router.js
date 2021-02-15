@@ -1,3 +1,4 @@
+import DetailModal from '../components/organisms/DetailModal.js'
 import Feed from '../components/organisms/Feed.js'
 
 const routes = [
@@ -16,6 +17,10 @@ const routes = [
   {
     path: '/:topic',
     action: (context) => Feed(undefined, `topics/${context.params.topic}/photos`)
+  },
+  {
+    path: '/:id',
+    action: context => DetailModal(undefined, `photos/${context.params.id}`)
   },
   {
     path: '/search',

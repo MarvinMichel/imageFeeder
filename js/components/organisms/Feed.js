@@ -1,15 +1,20 @@
 import { getImageData } from '../../modules/getImageData.js'
+import { handleRouteChange } from '../../router/router.js'
 
 import Image from '../molecules/Image.js'
 
-async function Feed(endpoint, param) {
-  const images = await getImageData(endpoint, param)
+async function Feed(param, endpoint) {
+  const images = await getImageData(param, endpoint)
   const feedContainer = document.createElement('section')
   feedContainer.classList.add('feed')
+  feedContainer.addEventListener('click', event => {
+    const id = event.target.id
+    handleRouteChange(`/${id}`)
+  })
 
   images.map(image => {
-    const { urls: { regular }, alt_description, user: { username } } = image
-    feedContainer.insertAdjacentHTML('beforeend', Image(regular, alt_description, username))
+    const { id, urls: { regular }, alt_description, user: { username } } = image
+    feedContainer.insertAdjacentHTML('beforeend', Image(id, regular, alt_description, username))
   }).join('')
 
   return feedContainer

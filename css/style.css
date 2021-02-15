@@ -151,3 +151,48 @@ figcaption.feed--image__description {
   left: 4%;
   position: absolute;
 }
+
+/* Image modal */
+.modal-background {
+  background: #00000095;
+  height: 100vh;
+  left: 0;
+  position: fixed;
+  top: 0;
+  width: 100vw;
+}
+
+.modal {
+  background-color: white;
+  left: 50%;
+  position: fixed;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 45%;
+}
+
+.modal img {
+  width: 100%;
+}
+
+.modal--summary {
+  align-items: center;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5%;
+  justify-content: space-evenly;
+  list-style: none;
+  margin: auto;
+  min-height: 4rem;
+  padding-inline-start: 0;
+  width: 95%;
+}
+
+.modal--summary__item {
+  align-items: center;
+  display: flex;
+}
+
+.modal--summary__item i {
+  margin-right: .5rem;
+}
