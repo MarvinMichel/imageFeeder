@@ -8,7 +8,8 @@ async function Feed(endpoint, param) {
   feedContainer.classList.add('feed')
 
   images.map(image => {
-    feedContainer.insertAdjacentHTML('beforeend', Image(image.urls.regular, image.alt_description, image.user.username))
+    const { urls: { regular }, alt_description, user: { username } } = image
+    feedContainer.insertAdjacentHTML('beforeend', Image(regular, alt_description, username))
   }).join('')
 
   return feedContainer
