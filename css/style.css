@@ -129,9 +129,10 @@ nav ul li.active {
 
 section.feed {
   display: grid;
-  gap: 2rem;
+  grid-auto-rows: 20px;
+  grid-column-gap: 2rem;
+  grid-row-gap: 1.5rem;
   grid-template-columns: repeat(auto-fill, minmax(17em, 1fr));
-  grid-auto-rows: 40px;
   justify-content: center;
   margin: 0 auto;
   width: 80vw;

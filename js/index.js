@@ -1,5 +1,5 @@
 import { handleRouteChange } from './router/router.js'
-import { resizeGridItems } from './modules/resizeGridItems.js'
+import { resizeGridItems } from './modules/resizeGridItems.js';
 
 import Navigation from './components/organisms/Navigation.js'
 
@@ -8,4 +8,4 @@ main.insertAdjacentElement('beforeend', Navigation())
 
 handleRouteChange()
 
-// window.addEventListener('resize', resizeGridItems())
+window.addEventListener('resize', resizeGridItems)
