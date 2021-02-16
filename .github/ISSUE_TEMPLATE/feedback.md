@@ -11,6 +11,6 @@ assignees: ''
 Tell me something nice about my code😇
 
 ## What can be improved
--[] Something to work on
--[] Another thing to work on
--[] Last one, I promise
+- [ ] Something to work on
+- [ ] Another thing to work on
+- [ ] Last one, I promise
