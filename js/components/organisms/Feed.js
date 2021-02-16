@@ -1,4 +1,5 @@
 import { getImageData } from '../../modules/getImageData.js'
+import { resizeGridItems } from '../../modules/resizeGridItems.js'
 
 import Image from '../molecules/Image.js'
 import DetailModal from './DetailModal.js'
@@ -20,7 +21,9 @@ async function Feed(param, endpoint) {
 
   images.map(image => {
     const { id, urls: { small: src }, alt_description: alt, user: { username } } = image
-    feedContainer.insertAdjacentHTML('beforeend', Image(id, src, alt, username))
+    const wrapper = document.createElement('div')
+    wrapper.insertAdjacentHTML('beforeend', Image(id, src, alt, username))
+    feedContainer.appendChild(wrapper)
   }).join('')
 
   return feedContainer
