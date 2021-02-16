@@ -38,6 +38,7 @@ async function handleRouteChange(url = '') {
         : main.appendChild(renderData)
     })
   resizeGridItems()
+  window.addEventListener('resize', resizeGridItems)
 }
 
 export { handleRouteChange }
