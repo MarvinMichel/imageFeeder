@@ -6,9 +6,9 @@ import DetailSummary from '../molecules/DetailSummary.js'
 async function DetailModal(param, endpoint) {
   const {
     alt_description,
-    urls: { regular: src },
+    urls: { small: src },
     likes,
-    user: { name },
+    user: { name, links: { html } },
     downloads
   } = await getImageData(param, endpoint)
 
@@ -22,7 +22,7 @@ async function DetailModal(param, endpoint) {
   modal.insertAdjacentHTML('beforeend', (`
     <article class="modal--content">
       ${DetailImage(src, alt_description)}
-      ${DetailSummary(name, likes, downloads)}
+      ${DetailSummary(name, likes, downloads, html)}
     </article>
   `))
 

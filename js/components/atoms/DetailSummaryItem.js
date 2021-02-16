@@ -1,19 +1,19 @@
-function DetailSummaryItem({ id, value: data }) {
-  let className, description;
+function DetailSummaryItem({ id, value: data, url }) {
+  let className;
 
   if (id === 'user') {
     className = 'gg-user'
-    description = 'Photographer:'
   } else if (id === 'likes') {
     className = 'gg-heart'
-    description = 'Likes:'
   } else {
     className = 'gg-software-download'
-    description = 'Downloads:'
   }
 
   return `
-    <li class="modal--content__summary--item"><i class=${className}></i>${description} ${data}</li>
+    <li class="modal--content__summary--item">
+      <i class=${className}></i>
+      ${url ? `<a href=${url} target="_blank">${data}</a>` : data}
+    </li>
   `
 }
 
