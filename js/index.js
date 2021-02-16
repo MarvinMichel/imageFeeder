@@ -8,4 +8,6 @@ main.insertAdjacentElement('beforeend', Navigation())
 
 handleRouteChange()
 
-window.addEventListener('resize', resizeGridItems)
+window.onload(() => {
+  window.addEventListener('resize', resizeGridItems)
+})

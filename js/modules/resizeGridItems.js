@@ -5,7 +5,6 @@ function resizeGridItems() {
     const rowHeight = parseInt(window.getComputedStyle(grid).getPropertyValue('grid-auto-rows'));
     const rowGap = parseInt(window.getComputedStyle(grid).getPropertyValue('grid-row-gap'));
     const rowSpan = Math.ceil((item.querySelector('.feed--image').getBoundingClientRect().height + rowGap) / (rowHeight + rowGap));
-    console.log(rowSpan)
     item.style.gridRowEnd = `span ${rowSpan}`;
   })
 }
