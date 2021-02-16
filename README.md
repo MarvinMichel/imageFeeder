@@ -4,7 +4,9 @@ ImageFeeder is an application build with the [Unsplash API](https://github.com/u
 
 ## Unsplash API
 <img src="./docs/images/api-object-preview.png" alt="Preview of object returned by API" width="300px" align="right">
-This project's using the Unsplash API to get the photos and search trough their database with keywords. The API can retrieve a photo object with different attributes. This object can be used to render data to the screen and show it to the user. We can retrieve the url to the image to display it inside a figure. Beneath the image we can show some statistics like the user and the number of likes and downloads. Inside the object we'll retrieve a link to the users' profilepage and create a link to give the photographer a larger podium. You can check out an example of an photo-object [here](./docs/example-object.json)
+This project's using the Unsplash API to get the photos and search trough their database with keywords. The API can retrieve a photo object with different attributes. This object can be used to render data to the screen and show it to the user. We can retrieve the url to the image to display it inside a figure. Beneath the image we can show some statistics like the user and the number of likes and downloads. Inside the object we'll retrieve a link to the users' profilepage and create a link to give the photographer a larger podium. 
+
+You can check out an example of an photo-object [here](docs/object-example.json)
 
 > 🤓For more information to use the API, check the [documentation](https://unsplash.com/documentation).
 
