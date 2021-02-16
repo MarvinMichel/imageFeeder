@@ -3,8 +3,8 @@ import ImageDescription from '../atoms/ImageDescription.js'
 
 function Image(id, src, alt, desc) {
   return `
-    <figure class="feed--image" id=${id}>
-      ${ImagePhoto(src, alt)}
+    <figure class="feed--image">
+      ${ImagePhoto(src, alt, id)}
       ${ImageDescription(desc)}
     </figure>`
 }

@@ -1,10 +1,10 @@
-function DetailSummaryItem(type, data) {
+function DetailSummaryItem({ id, value: data }) {
   let className, description;
 
-  if (type === 'user') {
+  if (id === 'user') {
     className = 'gg-user'
     description = 'Photographer:'
-  } else if (type === 'likes') {
+  } else if (id === 'likes') {
     className = 'gg-heart'
     description = 'Likes:'
   } else {
@@ -13,7 +13,7 @@ function DetailSummaryItem(type, data) {
   }
 
   return `
-    <li class="modal--summary__item"><i class=${className}></i>${description} ${data}</li>
+    <li class="modal--content__summary--item"><i class=${className}></i>${description} ${data}</li>
   `
 }
 

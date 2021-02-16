@@ -3,22 +3,22 @@ import DetailSummaryItem from '../atoms/DetailSummaryItem.js'
 function DetailSummary(name, likes, downloads) {
   const types = [
     {
-      type: 'user',
+      id: 'user',
       value: name
     },
     {
-      type: 'likes',
+      id: 'likes',
       value: likes
     },
     {
-      type: 'downloads',
+      id: 'downloads',
       value: downloads
     }
   ]
 
   return `
-    <ul class="modal--summary">
-      ${types.map(type => DetailSummaryItem({type, value}))}
+    <ul class="modal--content__summary">
+      ${types.map(type => DetailSummaryItem(type)).join('')}
     </ul>
   `
 }
