@@ -42,9 +42,11 @@ header h1 {
   font-size: 1.5em;
 }
 
-header h4 {
+header p {
   font-size: .5em;
   font-weight: 300;
+  margin: 0 auto;
+  width: max-content;
 }
 
 main form {
@@ -127,7 +129,9 @@ nav ul li.active {
 
 section.feed {
   display: grid;
-  gap: 3%;
+  grid-auto-rows: 20px;
+  grid-column-gap: 2rem;
+  grid-row-gap: 1.5rem;
   grid-template-columns: repeat(auto-fill, minmax(17em, 1fr));
   justify-content: center;
   margin: 0 auto;
@@ -142,6 +146,7 @@ figure.feed--image {
 }
 
 img.feed--image__photo {
+  cursor: pointer;
   object-fit: contain;
   width: 100%;
 }
@@ -150,4 +155,63 @@ figcaption.feed--image__description {
   bottom: 2%;
   left: 4%;
   position: absolute;
+}
+
+/* Image modal */
+.modal {
+  align-items: center;
+  display: flex;
+  height: 100vh;
+  justify-content: center;
+  left: 0;
+  position: fixed;
+  top: 0;
+  width: 100vw;
+  z-index: 5;
+}
+
+.modal--background {
+  background: #00000095;
+  cursor: pointer;
+  height: 100%;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 100%;
+  z-index: -1;
+}
+
+.modal--content {
+  background-color: white;
+  width: 60vh;
+}
+
+.modal--content__image {
+  width: 100%;
+}
+
+.modal--content__summary {
+  align-items: center;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5%;
+  justify-content: space-evenly;
+  list-style: none;
+  margin: auto;
+  min-height: 4rem;
+  padding-inline-start: 0;
+  width: 95%;
+}
+
+.modal--content__summary--item {
+  align-items: center;
+  display: flex;
+}
+
+.modal--content__summary--item i {
+  margin-right: .5rem;
+}
+
+.hidden {
+  display: none;
 }

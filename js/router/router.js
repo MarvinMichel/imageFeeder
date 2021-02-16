@@ -1,3 +1,5 @@
+import { resizeGridItems } from '../modules/resizeGridItems.js'
+
 import Feed from '../components/organisms/Feed.js'
 
 const routes = [
@@ -27,13 +29,15 @@ const router = new window.UniversalRouter(routes)
 
 async function handleRouteChange(url = '') {
   const main = document.querySelector('main')
-  const feedOld = main.querySelector('.feed')
+  const feedContainer = main.querySelector('.feed')
 
-  router.resolve(url).then(feed => {
-    feedOld
-      ? main.replaceChild(feed, feedOld)
-      : main.appendChild(feed)
-  })
+  await router.resolve(url)
+    .then(renderData => {
+      feedContainer
+        ? main.replaceChild(renderData, feedContainer)
+        : main.appendChild(renderData)
+    })
+  resizeGridItems()
 }
 
 export { handleRouteChange }
