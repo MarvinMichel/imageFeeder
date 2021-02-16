@@ -10,10 +10,12 @@ async function Feed(param, endpoint) {
 
   feedContainer.classList.add('feed')
   feedContainer.addEventListener('click', event => {
-    const id = event.target.id
+    const target = event.target
     
-    DetailModal(undefined, `photos/${id}`)
-      .then(renderData => main.appendChild(renderData))
+    if (target.tagName === "IMG") {
+      DetailModal(undefined, `photos/${target.id}`)
+        .then(renderData => main.appendChild(renderData))
+    }
   })
 
   images.map(image => {
