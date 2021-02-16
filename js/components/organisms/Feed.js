@@ -1,5 +1,4 @@
 import { getImageData } from '../../modules/getImageData.js'
-import { resizeGridItems } from '../../modules/resizeGridItems.js'
 
 import Image from '../molecules/Image.js'
 import DetailModal from './DetailModal.js'
