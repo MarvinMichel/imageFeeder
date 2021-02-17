@@ -3,8 +3,8 @@ import { getImageData } from '../../modules/getImageData.js'
 import Image from '../molecules/Image.js'
 import DetailModal from './DetailModal.js'
 
-async function Feed(param, endpoint) {
-  const images = await getImageData(param, endpoint)
+async function Feed(endpoint, param) {
+  const images = await getImageData(endpoint, param)
   const feedContainer = document.createElement('section')
   const main = document.querySelector('main')
 
@@ -13,7 +13,7 @@ async function Feed(param, endpoint) {
     const target = event.target
     
     if (target.tagName === "IMG") {
-      DetailModal(undefined, `photos/${target.id}`)
+      DetailModal(`photos/${target.id}`, undefined)
         .then(renderData => main.appendChild(renderData))
     }
   })

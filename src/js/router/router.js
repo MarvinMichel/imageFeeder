@@ -5,23 +5,23 @@ import Feed from '../components/organisms/Feed.js'
 const routes = [
   {
     path: '',
-    action: () => Feed()
+    action: () => Feed('photos')
   },
   {
     path: '/latest',
-    action: () => Feed()
+    action: () => Feed('photos')
   },
   {
     path: '/popular',
-    action: () => Feed('&order_by=popular')
+    action: () => Feed('photos', '&order_by=popular')
   },
   {
     path: '/:topic',
-    action: (context) => Feed(undefined, `topics/${context.params.topic}/photos`)
+    action: (context) => Feed(`topics/${context.params.topic}/photos`)
   },
   {
-    path: '/search',
-    action: () => Feed(`&query=${query}`, 'search/photos')
+    path: '/search/:query',
+    action: (context) => Feed('search/photos', `&query=${context.params.query}`)
   }
 ]
 

@@ -30,7 +30,7 @@ function NavList() {
     const target = event.target
     const url = target.innerText.replace('&', '').replace(/\s+/g, '-').toLowerCase()
 
-    // Remove active class and add to new target
+    // Remove active class and add to new active tab
     navList.childNodes.forEach(navItem => navItem.classList.remove('active'))
     target.classList.add('active')
     

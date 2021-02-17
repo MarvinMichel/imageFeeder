@@ -57,6 +57,27 @@ main form {
   width: clamp(18rem, 80vw, 35rem);
 }
 
+main form label {
+  position: relative;
+  width: 75%;
+}
+
+main form label div {
+  color: var(--color-accent);
+  left: 5%;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  transition: 
+    color .3s ease-in-out,
+    top .3s ease-in-out;
+}
+
+main form label:focus-within div {
+  color: var(--color-secondary);
+  top: -5%;
+}
+
 main form input,
 main form button {
   appearance: none;
@@ -79,7 +100,7 @@ main form input {
   background: #fff;
   color: var(--color-secondary);
   margin-right: 2%;
-  width: 75%;
+  width: 95%;
 }
 
 main form button {
@@ -146,6 +167,7 @@ figure.feed--image {
 }
 
 img.feed--image__photo {
+  box-shadow: 3px 3px 5px #00000020;
   cursor: pointer;
   object-fit: contain;
   width: 100%;
@@ -160,14 +182,20 @@ figcaption.feed--image__description {
 /* Image modal */
 .modal {
   align-items: center;
+  animation: fadeIn .3s ease-in-out forwards;
   display: flex;
   height: 100vh;
   justify-content: center;
   left: 0;
   position: fixed;
   top: 0;
+  transition: opacity 5s ease-in-out;
   width: 100vw;
   z-index: 5;
+}
+
+.modal.hidden {
+  opacity: 0;
 }
 
 .modal--background {
@@ -227,6 +255,7 @@ figcaption.feed--image__description {
   text-decoration: underline;
 }
 
-.hidden {
-  display: none;
+@keyframes fadeIn {
+  from {opacity: 0}
+  to {opacity: 1}
 }

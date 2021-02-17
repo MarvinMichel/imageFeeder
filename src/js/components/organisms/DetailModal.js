@@ -3,14 +3,14 @@ import { getImageData } from '../../modules/getImageData.js'
 import DetailImage from '../atoms/DetailImage.js'
 import DetailSummary from '../molecules/DetailSummary.js'
 
-async function DetailModal(param, endpoint) {
+async function DetailModal(endpoint, param) {
   const {
     alt_description,
     urls: { small: src },
     likes,
     user: { name, links: { html } },
     downloads
-  } = await getImageData(param, endpoint)
+  } = await getImageData(endpoint, param)
 
   const main = document.querySelector('main')
 
