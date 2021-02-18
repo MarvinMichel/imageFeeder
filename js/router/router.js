@@ -1,4 +1,4 @@
-import imagesLoaded from 'imagesloaded'
+/* global imagesLoaded */
 import { resizeInstance } from '../modules/resizeGridItems.js'
 
 import Feed from '../components/organisms/Feed.js'
