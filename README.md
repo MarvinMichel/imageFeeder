@@ -12,7 +12,7 @@ This project's using the Unsplash API to get the photos and search trough their 
 
 You can check out an example of an photo-object [here](docs/object-example.json)
 
-> 🤓For more information to use the API, check the [documentation](https://unsplash.com/documentation).
+>🤓 For more information to use the API, check the [documentation](https://unsplash.com/documentation).
 
 
 ## Design System
