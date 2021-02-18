@@ -1,5 +1,5 @@
 function resizeGridItem(item) {
-  const grid = document.querySelector(".feed")
+  const grid = document.querySelector('.feed')
   const rowHeight = parseInt(window.getComputedStyle(grid).getPropertyValue('grid-auto-rows'))
   const rowGap = parseInt(window.getComputedStyle(grid).getPropertyValue('grid-row-gap'))
   const itemHeight = item.querySelector('.feed--image').getBoundingClientRect().height

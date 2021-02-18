@@ -1,3 +1,4 @@
+import imagesLoaded from 'imagesloaded'
 import { resizeInstance } from '../modules/resizeGridItems.js'
 
 import Feed from '../components/organisms/Feed.js'
@@ -5,24 +6,24 @@ import Feed from '../components/organisms/Feed.js'
 const routes = [
   {
     path: '',
-    action: () => Feed('photos')
+    action: () => Feed('photos'),
   },
   {
     path: '/latest',
-    action: () => Feed('photos')
+    action: () => Feed('photos'),
   },
   {
     path: '/popular',
-    action: () => Feed('photos', '&order_by=popular')
+    action: () => Feed('photos', '&order_by=popular'),
   },
   {
     path: '/:topic',
-    action: (context) => Feed(`topics/${context.params.topic}/photos`)
+    action: (context) => Feed(`topics/${context.params.topic}/photos`),
   },
   {
     path: '/search/:query',
-    action: (context) => Feed('search/photos', `&query=${context.params.query}`)
-  }
+    action: (context) => Feed('search/photos', `&query=${context.params.query}`),
+  },
 ]
 
 const router = new window.UniversalRouter(routes)
@@ -38,7 +39,7 @@ async function handleRouteChange(url = '') {
       : main.appendChild(renderData)
   } finally {
     const gridCells = document.querySelectorAll('.feed > div')
-    gridCells.forEach(gridCell => imagesLoaded( gridCell, resizeInstance))
+    gridCells.forEach((gridCell) => imagesLoaded(gridCell, resizeInstance))
   }
 }
 

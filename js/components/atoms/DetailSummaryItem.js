@@ -1,5 +1,5 @@
 function DetailSummaryItem({ id, value: data, url }) {
-  let className;
+  let className
 
   if (id === 'user') {
     className = 'gg-user'

@@ -12,7 +12,7 @@ async function Feed(endpoint, param) {
   feedContainer.addEventListener('click', event => {
     const target = event.target
     
-    if (target.tagName === "IMG") {
+    if (target.tagName === 'IMG') {
       DetailModal(`photos/${target.id}`, undefined)
         .then(renderData => main.appendChild(renderData))
     }

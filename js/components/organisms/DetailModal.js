@@ -28,7 +28,7 @@ async function DetailModal(endpoint, param) {
 
   modalBackground.classList.add('modal--background')
   modalBackground.setAttribute('aria-hidden', true)
-  modalBackground.setAttribute('role', "none")
+  modalBackground.setAttribute('role', 'none')
   modalBackground.addEventListener('click', () => {
     main.removeChild(modal)
   })
