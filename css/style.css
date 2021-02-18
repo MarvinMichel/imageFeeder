@@ -58,13 +58,13 @@ main form {
 }
 
 main form label {
-  pointer-events: none;
   position: relative;
   width: 75%;
 }
 
 main form label div {
   color: var(--color-accent);
+  pointer-events: none;
   left: 5%;
   position: absolute;
   top: 50%;
