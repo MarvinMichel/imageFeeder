@@ -45,7 +45,7 @@ The design system applied in this project will be based on the [Atomic Design by
 ### Interaction Diagram
 
 ## Live Demo
-Check the live demo [here](https://marvinmichel.github.io/web-app-from-scratch-2021/)
+Check the live demo [here](https://marvinmichel.github.io/imageFeeder/)
 
 ## License
 [MIT License](LICENSE)
