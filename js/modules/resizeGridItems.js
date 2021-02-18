@@ -1,3 +1,4 @@
+// Resize grid-item's height based on available rows
 function resizeGridItem(item) {
   const grid = document.querySelector('.feed')
   const rowHeight = parseInt(window.getComputedStyle(grid).getPropertyValue('grid-auto-rows'))
@@ -7,6 +8,7 @@ function resizeGridItem(item) {
   item.style.gridRowEnd = `span ${rowSpan}`
 }
 
+// Loop trough multiple items
 function resizeGridItems() {
   const gridCells = document.querySelectorAll('.feed > div')
   gridCells.forEach(gridCell => {
@@ -14,6 +16,7 @@ function resizeGridItems() {
   })
 }
 
+// Resize grid item after image is fully loaded
 function resizeInstance(instance){
   const item = instance.elements[0]
   resizeGridItem(item)

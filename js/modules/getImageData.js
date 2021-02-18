@@ -1,3 +1,4 @@
+// Retrieve JSON data from Unsplash API
 async function getImageData(endpoint = 'photos', param) {
   const apiURL = 'https://api.unsplash.com/'
   const apiKey = 'lbhvcWW7O-NY5XERiGF9BrvC2L05e-MWIjagBBsXr9A'
