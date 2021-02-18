@@ -58,6 +58,7 @@ main form {
 }
 
 main form label {
+  pointer-events: none;
   position: relative;
   width: 75%;
 }
