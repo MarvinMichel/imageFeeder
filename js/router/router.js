@@ -1,7 +1,12 @@
 /* global imagesLoaded */
 import { resizeInstance } from '../modules/resizeGridItems.js'
+import { removeContent } from '../modules/removeContent.js'
 
 import Feed from '../components/organisms/Feed.js'
+import LoadingElement from '../components/atoms/LoadingElement.js'
+
+const contentContainer = document.getElementById('content')
+const loading = LoadingElement()
 
 const routes = [
   {
@@ -29,14 +34,13 @@ const routes = [
 const router = new window.UniversalRouter(routes)
 
 async function handleRouteChange(url = '') {
-  const main = document.querySelector('main')
-  const feedContainer = main.querySelector('.feed')
+  removeContent(contentContainer)
+  contentContainer.insertAdjacentHTML('beforeend', loading)
 
   try {
     const renderData = await router.resolve(url)
-    feedContainer
-      ? main.replaceChild(renderData, feedContainer)
-      : main.appendChild(renderData)
+    removeContent(contentContainer)
+    contentContainer.appendChild(renderData)
   } finally {
     const gridCells = document.querySelectorAll('.feed > div')
     gridCells.forEach((gridCell) => imagesLoaded(gridCell, resizeInstance))

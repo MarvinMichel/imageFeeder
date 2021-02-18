@@ -1,10 +1,10 @@
 import ImagePhoto from '../atoms/ImagePhoto.js'
 import ImageDescription from '../atoms/ImageDescription.js'
 
-function Image(id, src, alt, desc) {
+function Image(id, srcset, alt, desc) {
   return `
     <figure class="feed--image">
-      ${ImagePhoto(src, alt, id)}
+      ${ImagePhoto(srcset, alt, id)}
       ${ImageDescription(desc)}
     </figure>`
 }

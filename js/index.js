@@ -6,8 +6,8 @@ import Navigation from './components/organisms/Navigation.js'
 
 const main = document.querySelector('main')
 
-main.appendChild(SearchForm())
-main.insertAdjacentElement('beforeend', Navigation())
+main.insertAdjacentElement('afterbegin', Navigation())
+main.insertAdjacentElement('afterbegin', SearchForm())
 
 handleRouteChange()
 

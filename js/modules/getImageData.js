@@ -1,7 +1,7 @@
-export async function getImageData(endpoint = 'photos', param) {
+async function getImageData(endpoint = 'photos', param) {
   const apiURL = 'https://api.unsplash.com/'
   const apiKey = 'lbhvcWW7O-NY5XERiGF9BrvC2L05e-MWIjagBBsXr9A'
-  const fetchURL = `${apiURL}${endpoint}?client_id=${apiKey}${param ? `${param}` : ''}`
+  const fetchURL = `${apiURL}${endpoint}?client_id=${apiKey}&per_page=35${param ? `${param}` : ''}`
 
   try {
     const response = await fetch(fetchURL)
@@ -12,3 +12,5 @@ export async function getImageData(endpoint = 'photos', param) {
     return console.log('Something went wrong', err)
   }
 }
+
+export { getImageData }

@@ -19,9 +19,9 @@ async function Feed(endpoint, param) {
   })
 
   images.map(image => {
-    const { id, urls: { small: src }, alt_description: alt, user: { username } } = image
+    const { id, urls: srcset, alt_description: alt, user: { username } } = image
     const wrapper = document.createElement('div')
-    wrapper.insertAdjacentHTML('beforeend', Image(id, src, alt, username))
+    wrapper.insertAdjacentHTML('beforeend', Image(id, srcset, alt, username))
     feedContainer.appendChild(wrapper)
   }).join('')
 
