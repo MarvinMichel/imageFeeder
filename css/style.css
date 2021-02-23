@@ -174,8 +174,9 @@ nav ul li.active {
 }
 
 .feed--image {
-  margin: 0;
   height: max-content;
+  margin: 0;
+  overflow: hidden;
   position: relative;
   width: 100%;
 }
@@ -188,9 +189,17 @@ nav ul li.active {
 }
 
 .feed--image__description {
-  bottom: 2%;
-  left: 4%;
+  background: #ffffff85;
+  bottom: .25em;
+  padding: .5em 1em;
   position: absolute;
+  transform: translateY(100%);
+  transition: transform .3s ease-in-out;
+  width: 100%;
+}
+
+.feed--image:hover .feed--image__description {
+  transform: translateY(0);
 }
 
 /**************** Image Modal *****************/
@@ -281,13 +290,9 @@ nav ul li.active {
 }
 
 .circle {
-	--size: clamp(1em, 25%, 3em);
+	--size: clamp(1em, 25%, 2.5em);
 	animation: moveCircle 1.25s infinite;
-	background-image: linear-gradient(
-		45deg,
-		#93a5cf 0%,
-		var(--color-secondary) 100%
-	);
+	background: var(--color-secondary);
 	border-radius: 50%;
 	height: var(--size);
 	position: relative;
@@ -304,24 +309,6 @@ nav ul li.active {
 
 .circle:nth-child(3) {
 	animation-delay: 0.25s;
-}
-
-.circle:before {
-	background: radial-gradient(
-		circle at 50% 0px,
-		#ffffff,
-		rgba(255, 255, 255, 0) 58%
-	);
-	border-radius: 50%;
-	content: "";
-	filter: blur(0.2em);
-	-webkit-filter: blur(0.2em);
-	height: 90%;
-	left: 5%;
-	position: absolute;
-	top: 1%;
-	width: 90%;
-	z-index: 2;
 }
 
 /**************** Animations ******************/

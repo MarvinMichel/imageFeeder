@@ -9,7 +9,8 @@ async function DetailModal(endpoint, param) {
     urls: { small: src },
     likes,
     user: { name, links: { html } },
-    downloads
+    downloads,
+    links: { download }
   } = await getImageData(endpoint, param)
 
   const main = document.querySelector('main')
@@ -22,7 +23,7 @@ async function DetailModal(endpoint, param) {
   modal.insertAdjacentHTML('beforeend', (`
     <article class="modal--content">
       ${DetailImage(src, alt_description)}
-      ${DetailSummary(name, likes, downloads, html)}
+      ${DetailSummary(name, likes, downloads, html, download)}
     </article>
   `))
 

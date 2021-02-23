@@ -1,6 +1,6 @@
 import DetailSummaryItem from '../atoms/DetailSummaryItem.js'
 
-function DetailSummary(name, likes, downloads, link) {
+function DetailSummary(name, likes, downloads, link, download) {
   const types = [
     {
       id: 'user',
@@ -13,7 +13,8 @@ function DetailSummary(name, likes, downloads, link) {
     },
     {
       id: 'downloads',
-      value: downloads
+      value: downloads,
+      url: download
     }
   ]
 
