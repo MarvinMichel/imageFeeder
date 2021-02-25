@@ -1,5 +1,5 @@
 # ImageFeeder
-![GitHub deployments](https://img.shields.io/github/deployments/MarvinMichel/imageFeeder/github-pages)
+[![Netlify Status](https://api.netlify.com/api/v1/badges/9c15f21c-97df-40fa-af0c-bde691ffc65c/deploy-status)](https://app.netlify.com/sites/hopeful-cori-53a274/deploys)
 ![GitHub last commit](https://img.shields.io/github/last-commit/MarvinMichel/imageFeeder)
 ![W3C Validation](https://img.shields.io/w3c-validation/default?targetUrl=https%3A%2F%2Fmarvinmichel.github.io%2FimageFeeder%2F)
 ![GitHub](https://img.shields.io/github/license/MarvinMichel/imageFeeder)
@@ -7,7 +7,7 @@
 ImageFeeder is an application build with the [Unsplash API](https://github.com/unsplash/unsplash-js). It shows you a feed of the latest photo's added to Unsplash and their corresponding photographers. You can view the photo's and their details, search for specific photo's trough keywords or just view random pictures. The application uses only vanilla code and no modules or libraries. It's a one-page, client-side rendered, modular web-application.
 
 ## Live Demo
-Check the live demo [here](https://marvinmichel.github.io/imageFeeder/)
+Check the live demo [here](https://imagefeeder.netlify.app/)
 
 ## How to use?
 1. [Download](https://github.com/MarvinMichel/imageFeeder/archive/master.zip) or clone the repo
