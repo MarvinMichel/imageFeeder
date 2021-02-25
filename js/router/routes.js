@@ -1,26 +1,28 @@
+// Components
 import Feed from '../components/organisms/Feed.js'
 
+// Route paths and render methods
 const routes = [
   {
-    path: '',
-    action: () => Feed('photos'),
+    path: '/',
+    render: () => Feed()
   },
   {
     path: '/latest',
-    action: () => Feed('photos'),
+    render: () => Feed()
   },
   {
     path: '/popular',
-    action: () => Feed('photos', '&order_by=popular'),
+    render: () => Feed('photos', '&order_by=popular')
   },
   {
     path: '/:topic',
-    action: (context) => Feed(`topics/${context.params.topic}/photos`),
+    render: params => Feed(`topics/${params.topic}/photos`)
   },
   {
     path: '/search/:query',
-    action: (context) => Feed('search/photos', `&query=${context.params.query}`),
-  },
+    render: params => Feed('search/photos', `&query=${params.query}`)
+  }
 ]
 
 export default routes

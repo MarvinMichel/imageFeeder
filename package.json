@@ -26,5 +26,9 @@
   "homepage": "https://marvinmichel.github.io/imageFeeder/",
   "devDependencies": {
     "eslint": "^7.20.0"
+  },
+  "dependencies": {
+    "imagesloaded": "^4.1.4",
+    "universal-router": "^9.0.1"
   }
 }

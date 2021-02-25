@@ -3,11 +3,11 @@ import { getImageData } from '../../modules/getImageData.js'
 import Image from '../molecules/Image.js'
 import DetailModal from './DetailModal.js'
 
-async function Feed(endpoint, param) {
-  const images = await getImageData(endpoint, param)
-  const feedContainer = document.createElement('section')
-  const main = document.querySelector('main')
+import { main } from '../../index.js'
 
+async function Feed(endpoint, param) {
+  // Create feed section
+  const feedContainer = document.createElement('section')
   feedContainer.classList.add('feed')
   feedContainer.addEventListener('click', event => {
     const target = event.target
@@ -18,12 +18,18 @@ async function Feed(endpoint, param) {
     }
   })
 
-  images.map(image => {
-    const { id, urls: srcset, alt_description: alt, user: { username } } = image
-    const wrapper = document.createElement('div')
-    wrapper.insertAdjacentHTML('beforeend', Image(id, srcset, alt, username))
-    feedContainer.appendChild(wrapper)
-  }).join('')
+  // Fetch images and inject them into feed section
+  try {
+    const images = await getImageData(endpoint, param)
+    images.map(image => {
+      const { id, urls: srcset, alt_description: alt, user: { username } } = image
+      const wrapper = document.createElement('div')
+      wrapper.insertAdjacentHTML('beforeend', Image(id, srcset, alt, username))
+      feedContainer.appendChild(wrapper)
+    }).join('')
+  } catch(err) {
+    console.log(err)
+  }
 
   return feedContainer
 }
