@@ -1,4 +1,4 @@
-import { handleRouteChange } from '../../router/router.js'
+import { router } from '../../index.js'
 
 import NavLink from '../atoms/NavLink.js'
 
@@ -28,11 +28,7 @@ function NavList() {
   navList.addEventListener('click', event => {
     const target = event.target
     const url = target.innerText.replace('&', '').replace(/\s+/g, '-').toLowerCase()
-
-    navList.childNodes.forEach(navItem => navItem.classList.remove('active'))
-    target.classList.add('active')
-    
-    handleRouteChange(`/${url}`)
+    router.loadRoute(url)
   })
 
   linkNames.map(linkName => {
