@@ -67,7 +67,7 @@ header::after {
 }
 
 header h1 {
-  font-size: 1.5em;
+  font-size: clamp(1.5em, 5vw, 2em);
 }
 
 header p {
@@ -87,7 +87,7 @@ header form {
   left: 50%;
   position: absolute;
   transform: translateX(-50%);
-  width: clamp(18rem, 80vw, 30rem);
+  width: clamp(18rem, 40vw, 40rem);
 }
 
 header form label {
