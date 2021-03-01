@@ -15,7 +15,7 @@ function NavList() {
     'Experimental',
     'Fashion',
     'Film',
-    'Health & Welness',
+    'Health',
     'Interiors',
     'Street Photography',
     'Technology',

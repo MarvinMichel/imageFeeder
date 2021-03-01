@@ -1,6 +1,9 @@
-function Input(type, name) {
+function Input(text, type, name) {
   return `
-    <input type=${type} name=${name} id=${name}>
+    <label>
+      <input type=${type} name=${name} id=${name} placeholder=" ">
+      <div>${text}</div>
+    </label>
   `
 }
 

@@ -1,6 +1,6 @@
 :root {
   --color-primary: #eeeeee;
-  --color-secondary: #3B4958;
+  --color-secondary: #181e24;
   --color-accent: #93a5cf;
 }
 
@@ -8,6 +8,8 @@
 *::before,
 *::after {
   box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
 html {
@@ -35,8 +37,33 @@ h6 {
 
 /**************** Header **********************/
 header {
+  display: flex;
+  flex-direction: column;
   font-size: clamp(2em, 8vw, 3em);
-  margin: .5em 0;
+  height: 35vh;
+  justify-content: center;
+  padding: .5em 0;
+  position: relative;
+  margin: 0 0 1em;
+}
+
+header::after {
+  background: 
+    radial-gradient(
+      circle, 
+      rgba(0, 0, 0, .5) 0%, 
+      rgb(255, 255, 255) 100%
+    ),
+    url("/images/header_background.jpg")
+    center center / cover no-repeat;
+  bottom: 0;
+  content: '';
+  left: 0;
+  opacity: .5;
+  position: absolute;
+  right: 0;
+  top: 0;
+  z-index: -1;
 }
 
 header h1 {
@@ -51,20 +78,24 @@ header p {
 }
 
 /**************** Searchbar *******************/
-main form {
+header form {
   align-items: center;
+  bottom: -1em;
   display: flex;
+  font-size: .4em;
   justify-content: center;
-  margin: 2.5em auto 2em;
-  width: clamp(18rem, 80vw, 35rem);
+  left: 50%;
+  position: absolute;
+  transform: translateX(-50%);
+  width: clamp(18rem, 80vw, 30rem);
 }
 
-main form label {
+header form label {
   position: relative;
-  width: 75%;
+  width: 100%;
 }
 
-main form label div {
+header form label div {
   color: var(--color-accent);
   pointer-events: none;
   left: 5%;
@@ -73,21 +104,23 @@ main form label div {
   transform: translateY(-50%);
   transition: 
     color .3s ease-in-out,
+    left .3s ease-in-out,
     top .3s ease-in-out;
 }
 
-main form label:focus-within div {
+header form label:focus-within div,
+header form label input:not(:placeholder-shown) + div {
   color: var(--color-secondary);
-  top: -5%;
+  left: 2%;
+  top: -.5em;
 }
 
-main form input,
-main form button {
+header form input,
+header form button {
   appearance: none;
   -moz-appearance: none;
   -webkit-appearance: none;
   border: none;
-  border-radius: 2em;
   box-shadow: 
     3px 3px 5px #1f1f1f16,
     -3px -3px 5px #ffffff16;
@@ -99,21 +132,24 @@ main form button {
   padding: .8em 1.5em;
 }
 
-main form input {
+header form input {
   background: #fff;
   color: var(--color-secondary);
   margin-right: 2%;
-  width: 95%;
+  width: 100%;
 }
 
-main form button {
+header form button {
   background: var(--color-secondary);
   color: var(--color-primary);
   cursor: pointer;
+  height: 100%;
+  position: absolute;
+  right: 0;
   transition: transform .1s ease-in-out;
 }
 
-main form button:active {
+header form button:active {
   transform: scale(.98);
 }
 
@@ -130,12 +166,11 @@ nav {
 nav ul {
   display: flex;
   list-style: none;
-  padding: 0;
+  margin: 1em 0;
 }
 
 nav ul li {
   background: #fff;
-  border-radius: clamp(15px, 20px, 30px);
   box-shadow: 
     3px 3px 5px #1f1f1f16,
     -3px -3px 5px #ffffff16;
@@ -145,6 +180,10 @@ nav ul li {
   margin-right: 1%;
   padding: .5em 1em;
   white-space: nowrap;
+}
+
+nav ul li:active {
+  transform: scale(.95)
 }
 
 nav ul li.active {
@@ -175,7 +214,6 @@ nav ul li.active {
 
 .feed--image {
   height: max-content;
-  margin: 0;
   overflow: hidden;
   position: relative;
   width: 100%;
@@ -255,7 +293,6 @@ nav ul li.active {
   list-style: none;
   margin: auto;
   min-height: 4rem;
-  padding-inline-start: 0;
   position: absolute;
   width: 100%;
 }

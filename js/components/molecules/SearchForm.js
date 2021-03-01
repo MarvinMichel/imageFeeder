@@ -2,13 +2,13 @@
 import { router } from '../../index.js'
 
 // Components
-import Label from '../molecules/Label.js'
+import Input from '../atoms/Input.js'
 import Button from '../atoms/Button.js'
 
 /**
  * Create search form with input, button and label
- * Add @function loadRoute for search functionality
- * Returns HTML Element <form>
+ * @function loadRoute for search functionality
+ * @returns HTML Element <form>
  */
 function SearchForm() {
   const form = document.createElement('form')
@@ -20,8 +20,12 @@ function SearchForm() {
     input.value = ''
   })
 
-  form.insertAdjacentHTML('beforeend', Label('Search...'))
-  form.appendChild(Button('Search'))
+  form.insertAdjacentHTML('beforeend', Input(
+    'Search...',
+    'text',
+    'search'
+  ))
+  form.appendChild(Button('<i class="gg-search"></i>'))
 
   return form
 }
