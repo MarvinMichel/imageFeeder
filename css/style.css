@@ -213,10 +213,13 @@ nav ul li.active {
 }
 
 .feed--image {
+  box-shadow: 
+    -3px -3px 5px #ffffff20,
+    3px 3px 5px #00000020;
+  cursor: pointer;
   height: max-content;
   overflow: hidden;
   position: relative;
-  width: 100%;
 }
 
 .feed--image,
@@ -224,10 +227,8 @@ nav ul li.active {
   width: 100%;
 }
 
-.feed--image__photo {
-  box-shadow: 3px 3px 5px #00000020;
-  cursor: pointer;
-  object-fit: contain;
+.feed--image__photo img {
+  display: block;
 }
 
 .feed--image__description {
@@ -235,13 +236,12 @@ nav ul li.active {
   bottom: .25em;
   padding: .5em 1em;
   position: absolute;
-  transform: translateY(100%);
+  transform: translateY(110%);
   transition: transform .3s ease-in-out;
-  width: 100%;
 }
 
 .feed--image:hover .feed--image__description {
-  transform: translateY(0);
+  transform: translateY(11%);
 }
 
 /**************** Image Modal *****************/
