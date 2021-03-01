@@ -18,7 +18,7 @@ Check the live demo [here](https://imagefeeder.netlify.app/)
 
 
 ## Unsplash API
-<img src="./docs/images/api-object-preview.png" alt="Preview of object returned by API" width="300px" align="right">
+<img src="./docs/images/api-object-preview.png" alt="Preview of object returned by API" width="350px" align="right">
 This project's using the Unsplash API to get the photos and search trough their database with keywords. The API can retrieve a photo object with different attributes. This object can be used to render data to the screen and show it to the user. We can retrieve the url to the image to display it inside a figure. Beneath the image we can show some statistics like the user and the number of likes and downloads. Inside the object we'll retrieve a link to the users' profilepage and create a link to give the photographer a larger podium. 
 
 You can check out an example of an photo-object [here](docs/object-example.json)
@@ -55,10 +55,10 @@ The application uses client-side routing. I've created the router based on [Will
     - Scroll at bottom of page.
 
 ### Actor Diagram
-<img src="./docs/images/actor-diagram.png">
+<img src="./docs/images/actor-diagram.png" width="500px">
 
 ### Interaction Diagram
-<img src="./docs/images/interaction-diagram.png">
+<img src="./docs/images/interaction-diagram.png" width="500px">
 
 ## License
 [MIT License](LICENSE)
