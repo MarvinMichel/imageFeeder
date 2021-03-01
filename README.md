@@ -39,20 +39,20 @@ The application uses client-side routing. I've created the router based on [Will
     - Application is connected to the Unsplash API.
     - User can switch tabs for different results.
     - Application can generate modulair HTML.
-    - Lazy-loading new images when bottom screen is reached.
+    - Application can open modals for photo-details or errors.
 3. The actors needed for those functionalities:
-    - A DOM-handler.
+    - DOM-handlers.
+    - An error handler.
     - An API-handler.
     - A client-side router.
-    - Pages to handle organisms.
     - Organisms to handle molecules.
     - Molecules to handle atoms.
     - Atoms to handle interaction.
 4. The posible user interactions are:
-    - Type a keyword in searchbar.
-    - Press the search button.
-    - Press a navigational tab to switch page.
-    - Scroll at bottom of page.
+    - Type a keyword in searchbar to change feed.
+    - Press a navigational tab to change feed.
+    - Use back & forward buttons to navigate trough history.
+    - Click images to open modal with photo-details.
 
 ### Actor Diagram
 <img src="./docs/images/actor-diagram.png" width="500px">
