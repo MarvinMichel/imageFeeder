@@ -1,11 +1,14 @@
-/**
- * 
+import Error from '../components/organisms/Error.js'
+
+import { main } from '../index.js'
+
+async function getImageData(endpoint = 'photos', param) {
+  /**
  * @param apiURL baseURL from api-eindpoint 
  * @param apiKey Unsplash API-Key
  * @param param search or topic parameter(s)
  * @returns json data from image(s) of Unsplash-API
  */
-async function getImageData(endpoint = 'photos', param) {
   const apiURL = 'https://api.unsplash.com/'
   const apiKey = 'lbhvcWW7O-NY5XERiGF9BrvC2L05e-MWIjagBBsXr9A'
   const fetchURL = `${apiURL}${endpoint}?client_id=${apiKey}&per_page=35${param ? `${param}` : ''}`
@@ -16,7 +19,8 @@ async function getImageData(endpoint = 'photos', param) {
     if (endpoint === 'search/photos') data = data.results
     return data
   } catch (err) {
-    return console.log('Something went wrong', err)
+    console.error(err)
+    main.insertAdjacentHTML('beforeend', Error('Couldn\'t fetch images from API'))
   }
 }
 

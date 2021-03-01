@@ -14,20 +14,16 @@ async function Feed(endpoint, param) {
     
     if (target.tagName === 'IMG') {
       DetailModal(`photos/${target.id}`, undefined)
-        .then(renderData => main.appendChild(renderData))
+        .then(renderData => main.append(renderData))
     }
   })
 
   // Fetch images and inject them into feed section
-  try {
-    const images = await getImageData(endpoint, param)
-    images.map(image => {
-      const { id, urls: srcset, alt_description: alt, user: { username } } = image
-      feedContainer.insertAdjacentHTML('beforeend', Image(id, srcset, alt, username))
-    }).join('')
-  } catch(err) {
-    console.log(err)
-  }
+  const images = await getImageData(endpoint, param)
+  images.map(image => {
+    const { id, urls: srcset, alt_description: alt, user: { username } } = image
+    feedContainer.insertAdjacentHTML('beforeend', Image(id, srcset, alt, username))
+  }).join('')
 
   return feedContainer
 }
