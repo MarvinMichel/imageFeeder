@@ -19,9 +19,11 @@ body.insertAdjacentHTML('afterbegin', Header())
 main.insertAdjacentElement('afterbegin', Navigation())
 main.insertAdjacentElement('afterbegin', SearchForm())
 
+// Create instance of client-side router
 const router = new Router(routes)
 
-// Resize images inside grid
+// Resize grid on window resize
+window.addEventListener('popstate', router._loadInitialRoute)
 window.addEventListener('resize', resizeGridItems)
 
 export { router, main }

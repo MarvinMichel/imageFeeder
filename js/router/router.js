@@ -21,10 +21,10 @@ class Router {
 
   loadRoute(...urlSegments) {
     /**
-     * Add loading state to page
-     * Render feed content based on url
-     * Provide active class to corresponding tab
-     * Resize grid when images are fully loaded
+     * @template Loading()
+     * @template contentData
+     * @function setActiveTab()
+     * @returns Filled content container with feed
      */
     removeContent(contentContainer)
     contentContainer.insertAdjacentHTML('beforeend', loading)
@@ -47,9 +47,9 @@ class Router {
 
   _matchUrlToRoute(urlSegments) {
     /**
-     * Check if @param urlSegments matches route path
-     * Check if route path is parameterised trough @param routePathSegments
-     * Returns mathed route and optional parameters
+     * @param urlSegments
+     * @param routePathSegments
+     * @returns mathed route and optional parameters
      */
     const routeParams = {}
 
@@ -77,13 +77,13 @@ class Router {
 
   _loadInitialRoute() {
     /**
-     * Load correct route on first render
-     * Splits baseURL and pathname with @param pathnameSplit
-     * Slices baseURL and returns pathname as array with @param pathSegments
+     * @param pathnameSplit
+     * @param pathSegments
+     * @returns Inital Route
      */
     const pathnameSplit = window.location.pathname.split('/')
     const pathSegments = pathnameSplit.length > 1 ? pathnameSplit.slice(1) : ''
-
+    
     this.loadRoute(...pathSegments)
   }
 }

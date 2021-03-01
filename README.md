@@ -28,7 +28,7 @@ You can check out an example of an photo-object [here](docs/object-example.json)
 The design system applied in this project will be based on the [Atomic Design by Brad Frost](https://bradfrost.com/blog/post/atomic-web-design/). This means the Javascript code will be split into different layers and functions, hereby creating reusable code troughout the application.
 
 ## Client-size router
-The application uses client-side routing. I've created the router based on [Will Tailors'](https://www.willtaylor.blog/client-side-routing-in-vanilla-js/) article. With the router, we use the [History API](https://developer.mozilla.org/en-US/docs/Web/API/History_API) so we can use the back and forward buttons of the browser to navigate trough the routes.
+The application uses client-side routing. I've created the router based on [Will Taylors'](https://www.willtaylor.blog/client-side-routing-in-vanilla-js/) article. With the router, we use the [History API](https://developer.mozilla.org/en-US/docs/Web/API/History_API) so we can use the back and forward buttons of the browser to navigate trough the routes.
 
 ## Actor & Interaction Diagram
 1. The main purpose of the application is a simple way for the user to look for photographs. This can be done by searching for keywords or exploration.
