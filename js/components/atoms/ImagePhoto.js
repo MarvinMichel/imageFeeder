@@ -1,11 +1,11 @@
 function ImagePhoto(srcset, alt, id) {
   return `
-    <picture>
+    <picture class="feed--image__photo">
       <source 
         media="(min-width: 1600px)"
         srcset=${srcset.regular}
       >
-      <img src=${srcset.small} alt="${alt}" class="feed--image__photo" id=${id} loading="lazy" />
+      <img src=${srcset.small} alt="${alt}" id=${id} loading="lazy" />
     </picture>
   `
 }

@@ -44,7 +44,7 @@ class Router {
       }).finally(() => {
         // Resize feed grid when images are fully loaded
         setActiveTab(urlSegments[0])
-        const gridCells = document.querySelectorAll('.feed > div')
+        const gridCells = document.querySelectorAll('.feed--image')
         gridCells.forEach((gridCell) => imagesLoaded(gridCell, resizeInstance))
       })
   }

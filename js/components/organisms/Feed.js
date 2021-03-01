@@ -23,9 +23,7 @@ async function Feed(endpoint, param) {
     const images = await getImageData(endpoint, param)
     images.map(image => {
       const { id, urls: srcset, alt_description: alt, user: { username } } = image
-      const wrapper = document.createElement('div')
-      wrapper.insertAdjacentHTML('beforeend', Image(id, srcset, alt, username))
-      feedContainer.appendChild(wrapper)
+      feedContainer.insertAdjacentHTML('beforeend', Image(id, srcset, alt, username))
     }).join('')
   } catch(err) {
     console.log(err)

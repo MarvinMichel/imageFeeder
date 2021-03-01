@@ -219,11 +219,15 @@ nav ul li.active {
   width: 100%;
 }
 
+.feed--image,
+.feed--image * {
+  width: 100%;
+}
+
 .feed--image__photo {
   box-shadow: 3px 3px 5px #00000020;
   cursor: pointer;
   object-fit: contain;
-  width: 100%;
 }
 
 .feed--image__description {
