@@ -5,6 +5,8 @@
 
 ImageFeeder is an application build with the [Unsplash API](https://github.com/unsplash/unsplash-js). It shows you a feed of the latest photo's added to Unsplash and their corresponding photographers. You can view the photo's and their details, search for specific photo's trough keywords or just view random pictures. The application uses only vanilla code and no modules or libraries. It's a one-page, client-side rendered, modular web-application.
 
+![ImageFeeder preview](./docs/images/imagefeeder.png)
+
 ## Live Demo
 Check the live demo [here](https://imagefeeder.netlify.app/)
 
