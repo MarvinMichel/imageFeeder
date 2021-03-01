@@ -53,8 +53,10 @@ The application uses client-side routing. I've created the router based on [Will
     - Scroll at bottom of page.
 
 ### Actor Diagram
+<img src="./docs/images/actor-diagram.png">
 
 ### Interaction Diagram
+<img src="./docs/images/interaction-diagram.png">
 
 ## License
 [MIT License](LICENSE)

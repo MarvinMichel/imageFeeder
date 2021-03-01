@@ -15,7 +15,7 @@ const main = document.querySelector('main')
 
 // Insert elements
 body.prepend(Header())
-main.insertAdjacentElement('afterbegin', Navigation())
+main.prepend(Navigation())
 
 // Create instance of client-side router
 const router = new Router(routes)
