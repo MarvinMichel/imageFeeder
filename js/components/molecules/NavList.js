@@ -28,7 +28,7 @@ function NavList() {
   navList.addEventListener('click', event => {
     const target = event.target
     const url = target.innerText.replace('&', '').replace(/\s+/g, '-').toLowerCase()
-    router.loadRoute(url)
+    router.loadRoute(true, url)
   })
 
   linkNames.map(linkName => {

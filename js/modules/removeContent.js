@@ -1,4 +1,7 @@
-// Remove HTML content and children from @parent
+/**
+ * @param parent HTML parent element with children 
+ * @returns empty parent
+ */
 function removeContent(parent) {
   while (parent.firstChild) {
     parent.removeChild(parent.firstChild)

@@ -16,7 +16,7 @@ function SearchForm() {
     event.preventDefault()
 
     const input = document.getElementById('search')
-    router.loadRoute('search', input.value)
+    router.loadRoute(true, 'search', input.value)
     input.value = ''
   })
 

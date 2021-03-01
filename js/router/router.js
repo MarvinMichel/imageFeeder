@@ -19,7 +19,7 @@ class Router {
     this._loadInitialRoute()
   }
 
-  loadRoute(...urlSegments) {
+  loadRoute(pushState, ...urlSegments) {
     /**
      * @template Loading()
      * @template contentData
@@ -30,9 +30,12 @@ class Router {
     contentContainer.insertAdjacentHTML('beforeend', loading)
 
     const matchedRoute = this._matchUrlToRoute(urlSegments)
-
-    const url = `/${urlSegments.join('/')}`
-    history.pushState({}, '', url)
+    
+    if (pushState) {
+      const title = urlSegments[0]
+      const url = `/${urlSegments.join('/')}`
+      history.pushState({ title: title }, '', url)
+    }
 
     matchedRoute.render(matchedRoute.params)
       .then(renderData => {
@@ -76,16 +79,17 @@ class Router {
     return { ...matchedRoute, params: routeParams }
   }
 
-  _loadInitialRoute() {
+  _loadInitialRoute(pushState = true) {
     /**
+     * @param pushState boolean: push the history state
      * @param pathnameSplit
      * @param pathSegments
      * @returns Inital Route
-     */
+    */
     const pathnameSplit = window.location.pathname.split('/')
-    const pathSegments = pathnameSplit.length > 1 ? pathnameSplit.slice(1) : ''
+    const pathSegments = pathnameSplit.length > 1 && pathnameSplit.slice(1)
     
-    this.loadRoute(...pathSegments)
+    this.loadRoute(pushState, ...pathSegments)
   }
 }
 

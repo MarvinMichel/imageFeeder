@@ -23,7 +23,7 @@ main.insertAdjacentElement('afterbegin', SearchForm())
 const router = new Router(routes)
 
 // Resize grid on window resize
-window.addEventListener('popstate', router._loadInitialRoute)
+window.addEventListener('popstate', () => router._loadInitialRoute(false))
 window.addEventListener('resize', resizeGridItems)
 
 export { router, main }
